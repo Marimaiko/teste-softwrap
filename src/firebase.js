@@ -3,7 +3,7 @@ import *as firebase from "firebase";
 const firebaseConfig = {
     apiKey: "AIzaSyCpyu8GAO2WATmwLiMANpT99Fvlr_q4FQU",
     authDomain: "teste-softwrap-f9ae4.firebaseapp.com",
-    databaseURL: "https://teste-softwrap-f9ae4.firebaseio.com",
+    databaseURL: "https://teste-softwrap-f9ae4.firebaseio.com/",
     projectId: "teste-softwrap-f9ae4",
     storageBucket: "teste-softwrap-f9ae4.appspot.com",
     messagingSenderId: "238365379971",

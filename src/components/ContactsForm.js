@@ -14,6 +14,23 @@ const ContactForm = (props) => {
 
     const [value, setValue]=useState(initialValues);
 
+  //   useEffect(() => {
+  //     const contactID = Object.keys(props.contactObj)[0]
+  //     if (contactID ==='')
+  //         setValue({ ...initialValues })
+  //     else
+  //         setValue({...props.contactObj[contactID]})
+  // }, [props.contactObj])
+
+  useEffect(() => {
+    if (props.currentID === '')
+        setValue({ ...initialValues })
+    else
+        setValue({
+            ...props.contactObj[props.currentID]
+        })
+}, [props.currentID, props.contactObj])
+
     const handleInputChange = e => {
         const {name,value} = e.target
         setValue({
@@ -28,7 +45,11 @@ const ContactForm = (props) => {
     }
 
     return(
-<Form onSubmit={handleFormSubmit}>
+<Form onSubmit={handleFormSubmit}
+  style={{
+    border: "1px solid #000",
+    padding:10
+  }}>
     <Form.Group controlId="formGridName" value={value.name} onChange={handleInputChange}>
       <Form.Label>Nome </Form.Label>
       <Form.Control type="name" placeholder="full Name" />
@@ -64,9 +85,8 @@ const ContactForm = (props) => {
   </Form.Row>   
   
     <Button as="input" type="submit" value="Save" />
+    <div>{ <br></br> }</div>
 </Form>
-
-
 
     )
 }
