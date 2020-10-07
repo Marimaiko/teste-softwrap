@@ -14,14 +14,6 @@ const ContactForm = (props) => {
 
     const [value, setValue]=useState(initialValues);
 
-  //   useEffect(() => {
-  //     const contactID = Object.keys(props.contactObj)[0]
-  //     if (contactID ==='')
-  //         setValue({ ...initialValues })
-  //     else
-  //         setValue({...props.contactObj[contactID]})
-  // }, [props.contactObj])
-
   useEffect(() => {
     if (props.currentID === '')
         setValue({ ...initialValues })
